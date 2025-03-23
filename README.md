@@ -1,7 +1,6 @@
 # Source
 
 [This is VЁRSTKA](https://github.com/i1off-tape/zakrivayuschiy-teg-f.git)
-ё
 
 # Website
 
