@@ -10,9 +10,48 @@
 
 */
 
+/* ==============================================
+   Media Queries: Reduced Motion & Contrast
+=============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+
+	:root {
+		--background-body-image: none;
+	}
+
+	.page {
+		background-color: gray;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--background-body-image: none;
+	}
+
+	.page {
+		background-color: gray;
+	}
+}
+
+/* ==============================================
+   Utility Classes
+=============================================== */
+
 .bordered {
 	border: var(--border-wrapper);
 }
+
+/* ==============================================
+   Layout & Global Components
+=============================================== */
 
 .page {
 	background-image: var(--background-body-image);
@@ -27,6 +66,10 @@
 	font-variation-settings: 'wght' var(--font-weight-regular, 400);
 	font-size: var(--font-content-size);
 }
+
+/* ==============================================
+   Header Component
+=============================================== */
 
 .header {
 	display: flex;
@@ -46,11 +89,15 @@
 	margin-block-end: 20px;
 }
 
-.header__title-discription {
+.header__title-description {
 	font-family: var(--font-PressStart2P-Regular);
 	text-transform: uppercase;
 	font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
+
+/* ==============================================
+   Content Layout
+=============================================== */
 
 .content {
 	padding-block-end: 102px;
@@ -62,6 +109,10 @@
 	gap: 50px;
 	margin-block-end: 50px;
 }
+
+/* ==============================================
+   Post Card Component
+=============================================== */
 
 .post-card__title {
 	padding: 4px 10px;
@@ -81,34 +132,6 @@
 	inline-size: 100%;
 }
 
-.filter__blur {
-	filter: blur(5px);
-}
-
-.filter__contrast {
-	filter: contrast(200%);
-}
-
-.filter__grayscale {
-	filter: grayscale(100%);
-}
-
-.filter__hue-rotate {
-	filter: hue-rotate(90deg);
-}
-
-.filter__invert {
-	filter: invert(100%);
-}
-
-.filter__sepia {
-	filter: sepia(100%);
-}
-
-.filter__multiply {
-	filter: invert(7%) sepia(7%) saturate(77%) hue-rotate(77deg);
-}
-
 .post-card__image-label {
 	position: absolute;
 	font-size: 14px;
@@ -121,8 +144,9 @@
 	text-transform: uppercase;
 }
 
-@supports (text-stroke: 1px #fff) {
+@supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
 	.post-card__image-label {
+		-webkit-text-stroke: 1px #fff;
 		text-stroke: 1px #fff;
 		text-shadow: none;
 	}
@@ -148,6 +172,10 @@
 	gap: 5px;
 }
 
+/* ==============================================
+   Buttons & Icon Styles
+=============================================== */
+
 button {
 	margin: 0;
 	padding: 0;
@@ -165,6 +193,22 @@ button {
 
 button:hover {
 	cursor: pointer;
+}
+
+button:has(span)::before {
+	content: '';
+	position: absolute;
+	background-color: #000;
+	transform: scaleX(0);
+	transition: 0.5s ease-in-out;
+	transform-origin: 0 50%;
+	inline-size: 100%;
+	block-size: 100%;
+	inset: 0;
+}
+
+button:has(span):hover::before {
+	transform: scaleX(1);
 }
 
 .card__icon-button {
@@ -193,22 +237,6 @@ button:hover {
 	box-shadow: 2px 2px 0 #000;
 }
 
-button:has(span)::before {
-	content: '';
-	position: absolute;
-	background-color: #000;
-	transform: scaleX(0);
-	transition: 0.5s ease-in-out;
-	transform-origin: 0 50%;
-	inline-size: 100%;
-	block-size: 100%;
-	inset: 0;
-}
-
-button:has(span):hover::before {
-	transform: scaleX(1);
-}
-
 .button__text {
 	font-family: var(--font-PressStart2P-Regular);
 	font-size: 14px;
@@ -217,6 +245,10 @@ button:has(span):hover::before {
 	color: #fff;
 	mix-blend-mode: difference;
 }
+
+/* ==============================================
+   Action Save FLOPPY BIRDDD
+=============================================== */
 
 .action-save {
 	background-color: #fff;
@@ -253,6 +285,7 @@ button:has(span):hover::before {
 	}
 }
 
+/* Dialog Styles */
 body:has(.action-save__dialog[open]) {
 	overflow: hidden;
 }
@@ -285,4 +318,36 @@ body:has(.action-save__dialog[open]) {
 
 .action-save__dialog::backdrop {
 	background: rgba(0, 0, 0, 0.75);
+}
+
+/* ==============================================
+   Filter Utility Classes
+=============================================== */
+
+.filter__blur {
+	filter: blur(5px);
+}
+
+.filter__contrast {
+	filter: contrast(200%);
+}
+
+.filter__grayscale {
+	filter: grayscale(100%);
+}
+
+.filter__hue-rotate {
+	filter: hue-rotate(90deg);
+}
+
+.filter__invert {
+	filter: invert(100%);
+}
+
+.filter__sepia {
+	filter: sepia(100%);
+}
+
+.filter__multiply {
+	filter: invert(7%) sepia(7%) saturate(77%) hue-rotate(77deg);
 }

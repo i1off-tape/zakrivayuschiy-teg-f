@@ -24,15 +24,16 @@
 		<link rel="stylesheet" href="./styles/animations.css" />
 	</head>
 	<body class="page">
-		<header class="header bordered">
+		<header class="header bordered" aria-label="Заголовок страницы">
 			<h1 class="header__title">&lt;/html&gt;</h1>
-			<p class="header__title-discription">закрывающий тег</p>
+			<p class="header__title-description">закрывающий тег</p>
 		</header>
 		<main class="content">
-			<section class="page-posts">
+			<h2 class="visually-hidden" id="posts-title">Посты пользователя</h2>
+			<section class="page-posts" aria-labelledby="posts-title">
 				<ul class="post-list">
-					<li class="post-card">
-						<h2 class="post-card__title bordered">
+					<li class="post-card" aria-labelledby="post-title-1">
+						<h2 class="post-card__title bordered" id="post-title-1">
 							Фритрек и нулевой спринт: Подготовка к работе
 						</h2>
 						<div class="post-card__image-wrapper bordered">
@@ -54,7 +55,11 @@
 								Место для ваших воспоминаний о начале обучения.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -87,14 +92,20 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">1 спринт: Я — чистый лист</h2>
+					<li class="post-card" aria-labelledby="post-title-2">
+						<h2 class="post-card__title bordered" id="post-title-2">
+							1 спринт: Я — чистый лист
+						</h2>
 						<div class="post-card__image-wrapper bordered">
 							<img
 								src="./images/image.png"
@@ -117,7 +128,11 @@
 								Место для ваших воспоминаний о начале первого спринта.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -150,14 +165,18 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">
+					<li class="post-card" aria-labelledby="post-title-3">
+						<h2 class="post-card__title bordered" id="post-title-3">
 							1 спринт: А если не получится?
 						</h2>
 						<div class="post-card__image-wrapper bordered">
@@ -179,7 +198,11 @@
 								Место для ваших воспоминаний об окончании первого спринта.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -214,14 +237,18 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">
+					<li class="post-card" aria-labelledby="post-title-4">
+						<h2 class="post-card__title bordered" id="post-title-4">
 							2 спринт: Погоня за идеалом
 						</h2>
 						<div class="post-card__image-wrapper bordered">
@@ -245,7 +272,11 @@
 								Место для ваших воспоминаний о начале второго спринта.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -278,14 +309,18 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">
+					<li class="post-card" aria-labelledby="post-title-5">
+						<h2 class="post-card__title bordered" id="post-title-5">
 							2 спринт: О тех, кто рядом
 						</h2>
 						<div class="post-card__image-wrapper bordered">
@@ -310,7 +345,11 @@
 								Место для ваших воспоминаний об окончании второго спринта.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -343,14 +382,18 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">
+					<li class="post-card" aria-labelledby="post-title-6">
+						<h2 class="post-card__title bordered" id="post-title-6">
 							3 спринт: Обходные стратегии
 						</h2>
 						<div class="post-card__image-wrapper bordered">
@@ -372,7 +415,11 @@
 								Место для ваших воспоминаний о начале третьего спринта.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -405,14 +452,18 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">
+					<li class="post-card" aria-labelledby="post-title-7">
+						<h2 class="post-card__title bordered" id="post-title-7">
 							3 спринт: Когда опускаются руки
 						</h2>
 						<div class="post-card__image-wrapper bordered">
@@ -436,7 +487,11 @@
 								Место для ваших воспоминаний об окончании третьего спринта.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -469,14 +524,20 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
 						</div>
 					</li>
-					<li class="post-card">
-						<h2 class="post-card__title bordered">«Сейчас я здесь»</h2>
+					<li class="post-card" aria-labelledby="post-title-8">
+						<h2 class="post-card__title bordered" id="post-title-8">
+							«Сейчас я здесь»
+						</h2>
 						<div class="post-card__image-wrapper bordered">
 							<img
 								src="./images/image.png"
@@ -500,7 +561,11 @@
 								чувствуете в этой точке пути.
 							</p>
 							<div class="post-card__button-wrapper">
-								<button class="card__icon-button" type="button">
+								<button
+									class="card__icon-button"
+									type="button"
+									aria-hidden="true"
+								>
 									<svg
 										class="like-icon"
 										width="39"
@@ -533,7 +598,11 @@
 										/>
 									</svg>
 								</button>
-								<button class="card__like-button bordered" type="button">
+								<button
+									class="card__like-button bordered"
+									type="button"
+									aria-label="Поставить лайк"
+								>
 									<span class="button__text">Like</span>
 								</button>
 							</div>
@@ -552,12 +621,18 @@
 				</svg>
 				<span class="button__text">Сохранить на память</span>
 			</button>
-			<dialog class="action-save__dialog bordered" id="savePage">
+			<dialog
+				class="action-save__dialog bordered"
+				id="savePage"
+				aria-labelledby="dialog-title"
+			>
 				<div class="action-save__dialog-wrapper">
 					<svg aria-hidden="true">
 						<use href="./svg/floppy.svg#floppy"></use>
 					</svg>
-					<p class="button__text">Вставьте дискету, чтобы продолжить</p>
+					<p class="button__text" id="dialog-title">
+						Вставьте дискету, чтобы продолжить
+					</p>
 				</div>
 				<button
 					class="action-save__dialog-button bordered"
