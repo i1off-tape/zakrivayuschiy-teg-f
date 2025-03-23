@@ -24,7 +24,7 @@
 	margin: 0 auto;
 	min-block-size: 100dvb;
 	font-family: var(--font-Inter-Variable);
-	font-variation-settings: var(--font-weight-regular);
+	font-variation-settings: 'wght' var(--font-weight-regular, 400);
 	font-size: var(--font-content-size);
 }
 
@@ -56,9 +56,6 @@
 	padding-block-end: 102px;
 }
 
-.page-posts {
-}
-
 .post-list {
 	display: flex;
 	flex-direction: column;
@@ -66,12 +63,9 @@
 	margin-block-end: 50px;
 }
 
-.post-card {
-}
-
 .post-card__title {
 	padding: 4px 10px;
-	font-variation-settings: var(--font-weight-bold);
+	font-variation-settings: 'wght' var(--font-weight-bold, 700);
 	font-size: inherit;
 	background-color: #fff;
 }
