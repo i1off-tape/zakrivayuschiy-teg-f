@@ -161,8 +161,14 @@
 }
 
 .post-card__content-text {
-	line-height: 116%;
+	line-height: 118%;
 	width: 99%;
+}
+
+@media (min-width >= 450px) {
+	.post-card__content-text {
+		line-height: 119%;
+	}
 }
 
 .post-card__button-wrapper {
@@ -262,7 +268,7 @@ button:has(span):hover::before {
 	block-size: 80px;
 }
 
-@media (width > 375px) {
+@media (width >= 375px) {
 	.action-save {
 		flex-direction: row;
 		inline-size: 335px;
@@ -278,7 +284,7 @@ button:has(span):hover::before {
 	mix-blend-mode: difference;
 }
 
-@media (width > 375px) {
+@media (width >= 375px) {
 	.action-save svg {
 		width: 21px;
 		height: 21px;
