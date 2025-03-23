@@ -151,10 +151,12 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-start;
+	gap: 5px;
 }
 
 button {
 	margin: 0;
+	padding: 0;
 	border: none;
 	outline: none;
 	color: var(--nav-text-color);
@@ -163,6 +165,27 @@ button {
 	cursor: pointer;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	position: relative;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.card__icon-button {
+	height: 38px;
+	transition: border 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.card__icon-button:focus-visible {
+	border: 2px solid #000;
+	outline: none;
+}
+
+.card__icon-button:focus {
+	outline: none;
 }
 
 .card__like-button {
@@ -171,9 +194,34 @@ button {
 	background-color: #fff;
 }
 
+.card__like-button:focus {
+	outline: none;
+	box-shadow: 2px 2px 0 #000;
+}
+
+button:has(span)::before {
+	content: '';
+	position: absolute;
+	background-color: #000;
+	transform: scaleX(0);
+	transition: 0.5s ease-in-out;
+	transform-origin: 0 50%;
+	inline-size: 100%;
+	block-size: 100%;
+	inset: 0;
+}
+
+button:has(span):hover::before {
+	transform: scaleX(1);
+}
+
 .button__text {
 	font-family: var(--font-PressStart2P-Regular);
 	font-size: 14px;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+	mix-blend-mode: difference;
 }
 
 .action-save {
@@ -199,6 +247,16 @@ button {
 .action-save svg {
 	width: 28px;
 	height: 28px;
+	color: #fff;
+	z-index: 1;
+	mix-blend-mode: difference;
+}
+
+@media (width > 375px) {
+	.action-save svg {
+		width: 21px;
+		height: 21px;
+	}
 }
 
 body:has(.action-save__dialog[open]) {
@@ -222,6 +280,7 @@ body:has(.action-save__dialog[open]) {
 .action-save__dialog svg {
 	width: 39px;
 	height: 39px;
+	mix-blend-mode: difference;
 	flex-shrink: 0;
 }
 
