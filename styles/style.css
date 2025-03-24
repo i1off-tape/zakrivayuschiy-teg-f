@@ -259,7 +259,7 @@ button:has(span):focus {
 .action-save {
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   gap: 8px;
